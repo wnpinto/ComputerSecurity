@@ -1,0 +1,30 @@
+Downloading and Installing Snort On Windows
+
+	- Goto www.snort.org/snort-downloads
+	- Download the latest Snort .exe file
+	- Open the Snort .exe file and follow the installation instructions. Install snort into the C:\ directory.
+	
+Downloading the rules
+	- Goto www.snort.org/snort-rules 
+	- Under Registered User Release, download the same version number file as the .exe file. (Need to first register to download rules).
+	- Once the rules is downloaded, extract the file and copy and overwrite the \rules directory into C:\Snort\
+	- The next step is to download and install WinPcap for windows, which is needed for snort.
+
+Downloading WinPcap
+	- Goto http://www.winpcap.org/install/default.htm and download the latest WinPcap for Windows.
+	- Open the downloaded WinPcap file and follow the installation instructions.
+
+
+Configuring Snort
+	- Once Snort and WinPcap is downloaded, copy the snort.conf file from the Installation Instructions folder from the CD into C:\Snort\etc.
+	- Next copy the scan.rules file from the Installation Instructions folder from the CD into C:\Snort\rules
+	- Move the two .log files (newdat3.log and )from the scan and into C:\Snort\log\ directory
+
+
+**To run snort, make sure you are in C:\Snort\bin directory
+
+Open command prompt and run the following line to test:
+
+snort -r C:\Snort\log\newdat3.log -c C:\Snort\etc\snort.conf -l C:\Snort\log -A console > C:\Snort\log\newdatXX.txt
+
+Or copy the “runLogging.bat” file onto the desktop and run the file.
